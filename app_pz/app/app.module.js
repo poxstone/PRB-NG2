@@ -26,7 +26,7 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             courses_component_1.CoursesComponent,
-            coursebox_component_1.CoursesBoxComponent
+            coursebox_component_1.CourseBoxComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),

@@ -13,13 +13,13 @@ var COURSES = [
     {
         id: 1,
         name: 'Angular 2',
-        image: 'https://angular.io/resources/images/logos/standard/logo-nav.png',
+        image: 'http://platzi.josueggh.com/angular.png',
         price: 100
     },
     {
         id: 2,
         name: 'Python',
-        image: 'https://static.platzi.com/media/organizations/platzilogo.png',
+        image: 'http://platzi.josueggh.com/python.png',
         price: 120
     }
 ];
@@ -33,7 +33,7 @@ var CoursesComponent = (function () {
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n\t\t<coursebox \n\t\t\t[course]=\"course_info\"\n\t\t\t*ngFor=\"let course_info of courses\"\n\t\t></coursebox>\n        </div>\n    "
+        template: "\n    <h2>{{title}}</h2>\n    <div class=\"courses_list\">\n      <coursebox\n        [course]=\"course_info\"\n        *ngFor = \"let course_info of courses\"\n      ></coursebox>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], CoursesComponent);

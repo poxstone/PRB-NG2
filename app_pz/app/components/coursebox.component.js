@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var CoursesBoxComponent = (function () {
-    function CoursesBoxComponent() {
+var CourseBoxComponent = (function () {
+    function CourseBoxComponent() {
     }
-    return CoursesBoxComponent;
+    return CourseBoxComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], CoursesBoxComponent.prototype, "course", void 0);
-CoursesBoxComponent = __decorate([
+], CourseBoxComponent.prototype, "course", void 0);
+CourseBoxComponent = __decorate([
     core_1.Component({
         selector: 'coursebox',
-        template: "\n\n\t<div class=\"course\" >\n\t\t<img [src]=\"course.image\"/>\n\t\t<h2>{{course.name}}</h2>\n\t\t<span class=\"price\">\n\t\t\t{{course.price | currency : 'USD': true :'1.2-2'}}\n\t\t</span>\n\t\t<button>Agregar al carrito</button>\n\t</div>\n\t"
+        template: "\n     <div class=\"course\">\n        <img [src]=\"course.image\">\n        <h2>{{course.name}}</h2>\n        <span class=\"price\">\n          {{course.price | currency : 'USD': true :'1.2-2'}}\n        </span>\n        <button>Agregar al carrito</button>\n      </div>\n  "
     }),
     __metadata("design:paramtypes", [])
-], CoursesBoxComponent);
-exports.CoursesBoxComponent = CoursesBoxComponent;
+], CourseBoxComponent);
+exports.CourseBoxComponent = CourseBoxComponent;
 //# sourceMappingURL=coursebox.component.js.map

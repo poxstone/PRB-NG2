@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './components/app.component';
-import {CoursesComponent} from './components/courses.component';
-import {CoursesBoxComponent} from './components/coursebox.component';
+import {CoursesComponent } from './components/courses.component'
+import {CourseBoxComponent} from './components/coursebox.component'
 
 @NgModule({
   imports : [
@@ -12,9 +12,9 @@ import {CoursesBoxComponent} from './components/coursebox.component';
   declarations:[
     AppComponent,
     CoursesComponent,
-	CoursesBoxComponent
+    CourseBoxComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent]
 })
 
 export class AppModule{}
