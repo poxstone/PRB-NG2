@@ -9,28 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./components/app.component");
-var courses_component_1 = require("./components/courses.component");
-var coursebox_component_1 = require("./components/coursebox.component");
-var AppModule = (function () {
-    function AppModule() {
+var CoursesBoxComponent = (function () {
+    function CoursesBoxComponent() {
     }
-    return AppModule;
+    return CoursesBoxComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            courses_component_1.CoursesComponent,
-            coursebox_component_1.CoursesBoxComponent
-        ],
-        bootstrap: [app_component_1.AppComponent]
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], CoursesBoxComponent.prototype, "course", void 0);
+CoursesBoxComponent = __decorate([
+    core_1.Component({
+        selector: 'coursebox',
+        template: "\n\n\t<div class=\"course\" >\n\t\t<img [src]=\"course.image\"/>\n\t\t<h2>{{course.name}}</h2>\n\t\t<span class=\"price\">\n\t\t\t{{course.price | currency : 'USD': true :'1.2-2'}}\n\t\t</span>\n\t\t<button>Agregar al carrito</button>\n\t</div>\n\t"
     }),
     __metadata("design:paramtypes", [])
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], CoursesBoxComponent);
+exports.CoursesBoxComponent = CoursesBoxComponent;
+//# sourceMappingURL=coursebox.component.js.map

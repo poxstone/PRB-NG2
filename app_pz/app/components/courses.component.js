@@ -33,7 +33,7 @@ var CoursesComponent = (function () {
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n            <div class=\"course\" *ngFor=\"let course of courses\" >\n                <img [src]=\"course.image\"/>\n                <h2>{{course.name}}</h2>\n                <span class=\"price\">\n                    {{course.price | currency : 'USD': true :'1.2-2'}}\n                </span>\n                <button>Agregar al carrito</button>\n            </div>\n        </div>\n    "
+        template: "\n        <h2>{{title}}</h2>\n        <div class=\"courses_list\">\n\t\t<coursebox \n\t\t\t[course]=\"course_info\"\n\t\t\t*ngFor=\"let course_info of courses\"\n\t\t></coursebox>\n        </div>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], CoursesComponent);
