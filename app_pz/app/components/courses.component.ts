@@ -5,13 +5,13 @@ const COURSES : Course[] =[
  {
     id : 1,
     name : 'Angular 2',
-    image : 'http://platzi.josueggh.com/angular.png',
+    image : 'https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-page-doc.svg',
     price : 100
   },
   {
     id : 2,
     name : 'Python',
-    image : 'http://platzi.josueggh.com/python.png',
+    image : 'https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-map.svg',
     price : 120
   }
 ]
