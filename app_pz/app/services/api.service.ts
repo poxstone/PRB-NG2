@@ -16,12 +16,21 @@ export class ApiService{
 			.catch( this.error );
 	}
 
+	// getCourses() app/components/courses.component.ts
 	getCoursesSlow() : Promise <Course[]> {
 		return new Promise <Course[]> (
 			resolve => setTimeout( resolve ,2000)
 		).then(
 			() => this.getCourses()
 		)
+	}
+
+	getCourse( id:number) {
+		return this.getCourses()
+			.then(
+				// function (courses) { console.log(courses); return courses[0] }
+				courses => courses.find( course => course.id == id )
+			);
 	}
 
 	error( error:any ) {

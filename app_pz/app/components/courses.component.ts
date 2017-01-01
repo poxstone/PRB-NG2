@@ -13,6 +13,7 @@ import {ApiService} from '../services/api.service';
         *ngFor = "let course_info of courses"
       ></coursebox>
     </div>
+	<cart></cart>
   `,
   providers: [ ApiService ]
 })
@@ -24,8 +25,8 @@ export class CoursesComponent implements OnInit{
   constructor( private ApiService : ApiService ) {}
 
   getCourses() {
-	  this.ApiService.getCoursesSlow().then(
-		  courses => this.courses = courses;
+	  this.ApiService.getCourses().then(
+		  courses => this.courses = courses
 	  )
   }
 

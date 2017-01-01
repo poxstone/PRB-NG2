@@ -17,7 +17,7 @@ var CoursesComponent = (function () {
     }
     CoursesComponent.prototype.getCourses = function () {
         var _this = this;
-        this.ApiService.getCoursesSlow().then(function (courses) { return _this.courses = courses; });
+        this.ApiService.getCourses().then(function (courses) { return _this.courses = courses; });
     };
     CoursesComponent.prototype.ngOnInit = function () {
         this.getCourses();
@@ -27,7 +27,7 @@ var CoursesComponent = (function () {
 CoursesComponent = __decorate([
     core_1.Component({
         selector: 'courses',
-        template: "\n    <h2>{{title}}</h2>\n    <div class=\"courses_list\">\n      <coursebox\n        [course]=\"course_info\"\n        *ngFor = \"let course_info of courses\"\n      ></coursebox>\n    </div>\n  ",
+        template: "\n    <h2>{{title}}</h2>\n    <div class=\"courses_list\">\n      <coursebox\n        [course]=\"course_info\"\n        *ngFor = \"let course_info of courses\"\n      ></coursebox>\n    </div>\n\t<cart></cart>\n  ",
         providers: [api_service_1.ApiService]
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
