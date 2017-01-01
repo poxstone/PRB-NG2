@@ -1,0 +1,21 @@
+[
+ {
+    "id" : 0,
+    "name" : "Angular 2",
+    "image" : "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-page-doc.svg",
+    "price" : 100
+  },
+ {
+    "id" : 1,
+    "name" : "Dislike 3",
+    "image" : "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-dislike.svg",
+    "price" : 300
+  },
+  {
+    "id" : 2,
+    "name" : "Python",
+    "image" : "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-map.svg",
+    "price" : 120
+  }
+]
+
