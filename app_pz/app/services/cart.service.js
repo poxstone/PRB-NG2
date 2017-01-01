@@ -12,6 +12,8 @@ var core_1 = require("@angular/core");
 var CartService = (function () {
     function CartService() {
         this.courses = {};
+        this.detail = {};
+        this.courses = {};
         this.detail = { total: 0, items: 0 };
     }
     CartService.prototype.getCourses = function () {
@@ -20,19 +22,20 @@ var CartService = (function () {
     CartService.prototype.getDetail = function () {
         return this.detail;
     };
-    CartService.prototype.addToCar = function (courses) {
-        if (!this.courses[courses.id]) {
-            this.courses[courses.id] = {
+    CartService.prototype.addToCar = function (course) {
+        if (!this.courses[course.id]) {
+            this.courses[course.id] = {
                 quantity: 1,
-                name: courses.name,
-                price: courses.price
+                name: course.name,
+                price: course.price
             };
         }
         else {
-            this.courses[courses.id].quantity += 1;
+            this.courses[course.id].quantity += 1;
         }
-        this.detail.total += courses.price;
-        this.detail.item += 1;
+        this.detail.total += course.price;
+        this.detail.items += 1;
+        console.log(this);
     };
     return CartService;
 }());

@@ -1,17 +1,17 @@
 import {Component, Input} from '@angular/core';
 import {Course} from '../common/course';
+import {CartService} from '../services/cart.service';
 
 @Component({
   selector: 'coursebox',
-  template: 
-  `
+  template: `
      <div class="course">
         <img [src]="course.image">
         <h2>{{course.name}}</h2>
         <span class="price">
           {{course.price | currency : 'USD': true :'1.2-2'}}
         </span>
-        <button>Agregar al carrito</button>
+        <button class="hi" (click)="add(course)" >Agregar al carrito</button>
       </div>
   `
 })
@@ -19,4 +19,11 @@ import {Course} from '../common/course';
 export class CourseBoxComponent{
   @Input()
   course: Course;
+
+  constructor( private CartService : CartService ){ }
+  
+  add( course : Course) {
+		this.CartService.addToCar( course );
+  }
+
 } 

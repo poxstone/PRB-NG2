@@ -4,12 +4,12 @@ import {Course} from '../common/course';
 @Injectable()
 
 export class CartService {
-	private courses: any;
-	private detail: any;
+	private courses: any = {};
+	private detail: any = {};
 
 	constructor() {
 		this.courses = {};
-		this.detail = {total: 0, items: 0};
+		this.detail = {total:0, items:0};
 	}
 
 	getCourses() {
@@ -20,21 +20,21 @@ export class CartService {
 		return this.detail;
 	}
 
-	addToCar( courses:Course ) {
+	addToCar( course:Course ) {
 
-		if ( !this.courses[courses.id] ) {
-			this.courses[courses.id] = {
+		if ( !this.courses[course.id] ) {
+			this.courses[course.id] = {
 				quantity: 1,
-				name: courses.name,
-				price: courses.price
+				name: course.name,
+				price: course.price
 			}
 		} else {
-			this.courses[courses.id].quantity += 1;
+			this.courses[course.id].quantity += 1;
 		}
 		
-		this.detail.total += courses.price;
-		this.detail.item += 1;
+		this.detail.total += course.price;
+		this.detail.items += 1;
+		console.log(this);
 	}
-
 }
 
