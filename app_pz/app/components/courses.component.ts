@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from '../common/course';
 import {ApiService} from '../services/api.service';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'courses',
@@ -15,14 +16,17 @@ import {ApiService} from '../services/api.service';
     </div>
 	<cart></cart>
   `,
-  providers: [ ApiService ]
+  providers: [ ApiService, AuthService ]
 })
 
 export class CoursesComponent implements OnInit{
   title : string = 'Cursos disponibles'
   courses : Course [];
 
-  constructor( private ApiService : ApiService ) {}
+  constructor(
+	  private auth : AuthService,
+	  private ApiService : ApiService
+  ) {}
 
   getCourses() {
 	  this.ApiService.getCourses().then(
@@ -31,6 +35,7 @@ export class CoursesComponent implements OnInit{
   }
 
   ngOnInit() {
+	  this.auth.check();
 	  this.getCourses();
   }
 
