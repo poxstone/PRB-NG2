@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, trigger, state, style, transition, animate} from '@angular/core';
 import {Course} from '../common/course';
 import {CartService} from '../services/cart.service';
 import {Router} from '@angular/router';
@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'coursebox',
   template: `
-     <div class="course">
+     <div class="course" [@courseState]="course.state">
         <img [src]="course.image" (click)="gotoDetails(course)" >
         <h2>{{course.name}}</h2>
         <span class="price">
@@ -14,7 +14,19 @@ import {Router} from '@angular/router';
         </span>
         <button class="hi" (click)="add(course)" >Agregar al carrito</button>
       </div>
-  `
+  `,
+  animations: [
+	  trigger('courseState', [
+		  state('inactive', style({
+			backgroundColor: 'none',
+			transform: 'scale(1)'
+		  })),
+		  state('active', style({
+			  backgroundColor: '#cfd8dc',
+			  transform: 'scale(0.85)'
+		  }))
+	  ])
+  ]
 })
 
 export class CourseBoxComponent{
@@ -27,7 +39,9 @@ export class CourseBoxComponent{
   ){ }
   
   add( course: Course) {
-		this.CartService.addToCar( course );
+    course.state = 'active';
+	setTimeout( () => { course.state = 'inactive'}, 400 );
+	this.CartService.addToCar( course );
   }
 
   gotoDetails( course:Course ) {
